@@ -1,0 +1,152 @@
+<html>	
+    <head>
+        <LINK href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        
+        
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        
+        <style>
+            .btn{
+                width:200px;
+                height:100px;
+                
+            }
+            
+            .col-xs-3{
+                padding-bottom:20px;
+                padding-top:20px;
+            }
+            
+        </style>
+    </head>
+	<body>
+    
+            <div class='row'>
+                <div class="col-xs-3 text-center text-center">
+                  <button id="american" type="button" class="btn btn-default">
+                    <img src="American.gif"/>
+                    <br/>
+                    <span>American Anthem</span>
+                  </button>
+                </div>
+                <div class="col-xs-3 text-center">
+                    <button id="beethoven" type="button" class="btn btn-default">
+                        <img src="Beethoven.jpg"/>
+                        <br/>
+                        <span>Beethoven's 5th</span>
+                    </button>
+                </div>
+                <div class="col-xs-3 text-center">
+                    <button id="caddyshack" type="button" class="btn btn-default">
+                        <img src="Caddyshack.jpg"/>
+                        <br/>
+                        <span>Caddyshack Horn</span>
+                    </button>
+                </div>
+                <div class="col-xs-3 text-center">
+                    <button id="doorbell" type="button" class="btn btn-default">
+                        <img src="doorbell.jpg"/>
+                        <br/>
+                        <span>Regular Doorbell</span>
+                    </button>
+                </div>
+            </div>
+
+
+
+            <div class='row'>
+                <div class="col-xs-3 text-center">
+                  <button id="fast" type="button" class="btn btn-default">
+                    <img src="fast.jpg"/>
+                    <br/>
+                    <span>Fast Tones</span>
+                  </button>
+                </div>
+                
+                <div class="col-xs-3 text-center">
+                  <button id="five" id="five" type="button" class="btn btn-default">
+                    <img src="five.jpg"/>
+                    <br/>
+                    <span>Five Tones</span>
+                  </button>
+                </div>
+                
+                
+                <div class="col-xs-3 text-center">
+                  <button id="hbd" type="button" class="btn btn-default">
+                    <img src="hbd.jpeg"/>
+                    <br/>
+                    <span>Happy Birthday</span>
+                  </button>
+                </div>
+
+
+                <div class="col-xs-3 text-center">
+                  <button id="jb" type="button" class="btn btn-default">
+                    <img src="jb.jpg"/>
+                    <br/>
+                    <span>Jingle Bells</span>
+                  </button>
+                </div>
+                
+            </div>
+            
+            
+            <div class='row'>
+                <div class="col-xs-3 text-center">
+                  <button id="joy" type="button" class="btn btn-default">
+                    <img src="joy.jpg"/>
+                    <br/>
+                    <span>Joy To The World</span>
+                  </button>
+                </div>
+                
+                <div class="col-xs-3 text-center">
+                  <button id="mid" type="button" class="btn btn-default">
+                    <img src="mid.jpg"/>
+                    <br/>
+                    <span>Midnight Clock</span>
+                  </button>
+                </div>
+                
+                
+                <div class="col-xs-3 text-center">
+                  <button id="reg" type="button" class="btn btn-default">
+                    <img src="reg.jpg"/>
+                    <br/>
+                    <span>Regular</span>
+                  </button>
+                </div>
+
+
+                <div class="col-xs-3 text-center">
+                  <button id="ball" type="button" class="btn btn-default">
+                    <img src="ball.jpg"/>
+                    <br/>
+                    <span>Ball Game</span>
+                  </button>
+                </div>
+                
+            </div>
+        
+        
+        <script>
+            $( ":button" ).click(function() {
+                $.ajax({
+                  method: "POST",
+                  url: "/play",
+                  data: "{\"id\":\""+$( this ).attr('id')+"\"}",
+                  contentType: "application/json"
+                })
+                  .done(function( msg ) {
+                    //var responseObject = JSON.parse(msg);
+
+                });
+            });
+            
+        </script>
+            
+    </body>
+        
+</html>
