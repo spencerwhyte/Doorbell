@@ -12,6 +12,13 @@ app.use(express.static('images'));
 
 app.post('/play', function (req, response) {
     
+    
+    if (['american', 'beethoven', 'caddyshack', 'doorbell', 'fast', 'five', 'hbd', 'jb', 'joy', 'mid', 'ball'].indexOf(req.body.id) >= 0) {
+           
+    }else{
+        return;
+    }
+    
     console.dir("sent" + req.body.id);
     var myDevice = new apn.Device("f203e7ac01b705933e91bab1584c07e737a2c521e1c39a1aaa02b983d5e1f90b");
     
